@@ -1,0 +1,17 @@
+{
+    "loginPage": {
+       "emailInputField": "#email",
+    "passwordInputField": "#password",
+    "submitBtn": "button[type='submit']"
+},
+
+"registerPage":{
+    "FirstNameField": "#first-name",
+    "LastNameField": "#last-name",
+    "emailField": "#email",
+    "passwordField":"#password",
+    "confPasswordField": "#password-confirmation",
+    "termsField": ".form-check-input",
+    "submitButton": ".btn"
+}    
+}
