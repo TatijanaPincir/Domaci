@@ -41,7 +41,7 @@
 // });
 
 
-import {loginPage} from '../page_object/login'
+import {loginPage} from '../page_object/loginPage'
 
 it ('login successfully',()=> { 
         cy.visit("https://gallery-app.vivifyideas.com/login")

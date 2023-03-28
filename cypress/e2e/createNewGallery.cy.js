@@ -61,16 +61,26 @@ it ('create new gallery successfully',()=> {
      creategallery.SubmitBtn.click ()
      });
 
-//iz nekog razloga nakon klika na cancle, galerija se objavi?
-it.only ('cancel after opening create new gallery page',()=> { 
+
+it ('cancel after opening create new gallery page',()=> { 
    creategallery.createButton.click ()
    cy.url().should('eq', 'https://gallery-app.vivifyideas.com/create')
-    creategallery.titleInput.type('hit the cancle button')
+    creategallery.titleInput.type('hit the cancle button 1')
+    creategallery.descriptionInput.type ('proba')
 creategallery.imageUrlInput.type ('https://www.shutterstock.com/image-vector/hello-world-text-speech-bubble-260nw-1162382866.jpg')
 creategallery.cancleBtn.should ('be.visible')
      creategallery.cancleBtn.click ()
+    });
 
-  });
+  //ovo je bug
+it.only ('cancel after opening create new gallery page',()=> { 
+    creategallery.createButton.click ()
+    cy.url().should('eq', 'https://gallery-app.vivifyideas.com/create')
+     creategallery.titleInput.type('hit the cancle button 2')
+ creategallery.imageUrlInput.type ('https://www.shutterstock.com/image-vector/hello-world-text-speech-bubble-260nw-1162382866.jpg')
+ creategallery.cancleBtn.should ('be.visible')
+      creategallery.cancleBtn.click ()
+   });
 
   it ('Try to create new gallery when gallery title is empty',()=> { 
     creategallery.createButton.click ()
@@ -134,4 +144,4 @@ it  ('Try to create new gallery with invalid image format',()=> {
     .and('have.css', 'background-color', 'rgb(248, 215, 218)')
     .and ('have.css', 'border-color', 'rgb(245, 198, 203)')
 });
-});
+})
